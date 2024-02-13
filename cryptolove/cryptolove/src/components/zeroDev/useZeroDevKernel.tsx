@@ -24,7 +24,7 @@ export const useZeroDevKernel = () => {
 				chain: polygonMumbai,
 				projectId: process.env.NEXT_PUBLIC_ZERODEV_SEPOLIA_PROJECT_ID!,
 				signer: smartAccountSigner,
-				paymaster: "NONE",
+				paymaster: "SPONSOR",
 			});
 			setKernelClient(client);
 
