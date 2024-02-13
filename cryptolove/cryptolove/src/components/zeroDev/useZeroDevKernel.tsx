@@ -1,11 +1,12 @@
 // Just as Magic handles the creation of user wallets, ZeroDev handles the creation of smart contract accounts associated with the wallet.
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { useMagic } from "../magic/MagicProvider";
 
 import { createEcdsaKernelAccountClient } from "@zerodev/presets/zerodev";
 import { providerToSmartAccountSigner } from "permissionless";
 import { polygonMumbai } from "viem/chains";
+import { AddressContext } from "../context";
 
 export const useZeroDevKernel = () => {
 	const { magic } = useMagic();
@@ -36,5 +37,6 @@ export const useZeroDevKernel = () => {
 	return {
 		kernelClient,
 		scaAddress,
+		AddressContext,
 	};
 };
